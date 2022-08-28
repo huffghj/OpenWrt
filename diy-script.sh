@@ -8,7 +8,12 @@
 #===============================================
 
 # 修改默认IP
-# sed -i 's/192.168.1.1/10.10.10.10/g' package/base-files/files/bin/config_generate
+sed -i 's/192.168.1.1/10.11.12.1/g' package/base-files/files/bin/config_generate
+
+#增加风扇调速
+wget -P target/linux/rockchip/armv8/base-files/etc/init.d/ https://github.com/friendlyarm/friendlywrt/raw/master-v19.07.1/target/linux/rockchip-rk3399/base-files/etc/init.d/fa-rk3399-pwmfan
+wget -P target/linux/rockchip/armv8/base-files/usr/bin/ https://github.com/friendlyarm/friendlywrt/raw/master-v19.07.1/target/linux/rockchip-rk3399/base-files/usr/bin/start-rk3399-pwm-fan.sh
+chmod +x target/linux/rockchip/armv8/base-files/etc/init.d/fa-rk3399-pwmfan target/linux/rockchip/armv8/base-files/usr/bin/start-rk3399-pwm-fan.sh
 
 # Autocore
 sed -i 's/TARGET_rockchip/TARGET_rockchip\|\|TARGET_armvirt/g' package/lean/autocore/Makefile
