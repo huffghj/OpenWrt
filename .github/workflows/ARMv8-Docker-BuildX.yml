@@ -2,8 +2,8 @@ name: ARMv8 Docker BuildX
 
 on:
   workflow_dispatch:
-  schedule:
-    - cron: '30 16 * * 5'
+#   schedule:
+#     - cron: '30 16 * * 5'
 
 env:
   REPO_URL: https://github.com/coolsnowwolf/lede
