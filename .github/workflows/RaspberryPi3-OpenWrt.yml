@@ -10,8 +10,8 @@ name: RaspberryPi3 OpenWrt
 
 on:
   workflow_dispatch:
-  schedule:
-    - cron: '10 15 * * *'
+#   schedule:
+#     - cron: '10 15 * * *'
 
 env:
   REPO_URL: https://github.com/coolsnowwolf/lede
